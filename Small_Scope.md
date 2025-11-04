@@ -37,3 +37,31 @@
 
 ## Misconfigured Cloud Storage
 - Các tổ chức đang chuyển sang cơ sở hạ tầng đám mây và sử dụng các tùy chọn lưu trữ đám mây như Nhóm AWS S3, Nhóm GCP, v.v. để lưu trữ tài sản của họ. Tuy nhiên, do cấu hình sai đơn giản, một tổ chức có thể rò rỉ/tiết lộ một loạt thông tin cho những kẻ tấn công. Luôn luôn liệt kê các nhóm và các dịch vụ dựa trên đám mây khác và tìm kiếm cấu hình sai trong đó.
+
+```
+•	A / AAAA: ánh xạ tên miền → địa chỉ IPv4/IPv6. giúp biết máy chủ công khai nhận traffic.
+•	CNAME: bí danh (alias) — chỉ ra tên thực tế, có thể hé lộ dịch vụ hoặc CDN.
+•	MX: mail exchanger — chỉ ra nhà cung cấp/địa điểm xử lý email.
+•	TXT: chứa SPF, DKIM public keys, config khác; thường dùng cho xác thực email và metadata.
+•	SPF / DKIM / DMARC (thường trong TXT): độ cứng của bảo mật email — cấu hình thiếu/chưa tốt là rủi ro cho phishing.
+•	NS: name servers của zone — biết ai quản lý DNS (third-party DNS providers).
+•	SOA: thông tin quản trị zone, serial, TTL — giúp đánh giá vận hành DNS.
+•	SRV: chỉ dịch vụ (ví dụ LDAP, SIP) — hé lộ dịch vụ mạng.
+•	PTR (reverse DNS): mapping IP → tên, hữu ích cho xác định host.
+Mục tiêu: hiểu “cấu trúc” và “ai/ở đâu” vận hành hạ tầng DNS và email, để báo cáo rủi ro và khuyến nghị vá.
+
+•	Thông tin WHOIS / registrar / ngày tạo/hết hạn — rủi ro quản trị (ví dụ domain sắp hết hạn, thông tin contact lộ).
+•	Name server / DNS provider — xác định rủi ro bên thứ ba (DNS hijack, provider compromise).
+•	Danh sách subdomain công khai (ghi chú: thu thập bằng phương pháp passive được ủy quyền) — xác định bề rộng bề mặt tấn công.
+•	Các bản ghi email (MX, SPF, DKIM, DMARC) — mức độ bảo vệ email, khả năng spoofing/phishing.
+•	Certificate Transparency / TLS certs — xem cert nào được phát hành cho domain/subdomain.
+•	Public cloud / CDN / third-party services liên kết với domain — rủi ro do cấu hình sai (exposed storage buckets, misconfigured services).
+•	Public code/repos, leak / paste sites — có secret, token hay cấu hình lộ không.
+•	Web application fingerprint (stack, CMS, framework) — để báo cáo lỗ hổng liên quan đến các phiên bản dễ bị tấn công (nêu tên và khuyến nghị cập nhật).
+•	Email infrastructure & forwarders — rủi ro cho phishing và data exfiltration.
+•	DNS security settings: DNSSEC bật/tắt; zone transfer policy (nên chặn).
+•	Expiration & renewal practices — domain expiration hijacking risk.
+
+
+
+```

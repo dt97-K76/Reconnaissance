@@ -66,33 +66,5 @@ Mục tiêu: hiểu “cấu trúc” và “ai/ở đâu” vận hành hạ t�
 
 ```
 ```
-censys_9zi96ET6_Fv4iJmvHUQsa64LYKNVaK11k
+https://chatgpt.com/share/695fe9e1-388c-800a-8167-668eb886144e
 ```
-
-```
-d2ab843db73d47b4cf672f1145d1e62ddabcb531
-```
-```
-Kiểm tra scanning malware - Kiểm EICAR detection	"echo ""X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*"" > eicar.com
-swaks --server mail.example.com \
-  --from test@example.com \
-  --to user@target.com \
-  --auth LOGIN \
-  --auth-user test@example.com \
-  --auth-password 'password' \
-  --attach @eicar.com
-"
-Kiểm tra encrypt/compress (zip không pass) cơ bản	zip normal_eicar.zip file.com
-Kiểm tra encrypt/compress (zip với pass yếu) cơ bản	zip -P "password" zip_pw_eicar.zip eicar.com
-Kiểm tra encrypt/compress (zip với pass mạnh) cơ bản	zip -P "Ae4!sA0b3dC" zip_pw_eicar.zip eicar.com
-Kiểm tra encrypt/compress (7z) cơ bản	7z a -p"password123" -mhe=on eicar.7z eicar.com
-Kiểm tra encrypt/compress (rar) cơ bản	tar -czf eicar.tar.gz eicar.com
-Kiểm tra encrypt/compress (zip lồng nhau) cơ bản	zip outer.zip inner.zip
-Kiểm tra encrypt/compress (zip không pass) - mã độc	zip normal_eicar.zip file.com
-Kiểm tra encrypt/compress (zip với pass yếu) - mã độc	zip -P "password" zip_pw_eicar.zip eicar.com
-Kiểm tra encrypt/compress (zip với pass mạnh) - mã độc	zip -P "Ae4!sA0b3dC" zip_pw_eicar.zip eicar.com
-Kiểm tra encrypt/compress (7z) - mã độc	7z a -p"password123" -mhe=on eicar.7z eicar.com
-Kiểm tra encrypt/compress (rar) - mã độc	tar -czf eicar.tar.gz eicar.com
-Kiểm tra encrypt/compress (zip lồng nhau) - mã độc	zip outer.zip inner.zip
-```
-
